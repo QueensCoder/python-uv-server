@@ -28,10 +28,18 @@ if __name__ == "__main__":
         finally:
             db.close()
 
-    # Example route
+    # Example routes
     @app.get("/")
     def read_root():
         return {"message": "Welcome to the FastAPI server!"}
+
+    @app.get("/items/{item_id}")
+    def read_item(item_id: int, q: str = None):
+        return {"item_id": item_id, "q": q}
+
+    @app.post("/items/")
+    def create_item(item: dict):
+        return {"message": "Item created successfully", "item": item}
 
     # Run the FastAPI app
 
