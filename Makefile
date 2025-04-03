@@ -1,6 +1,9 @@
 hello:
 	echo "Hello, World!"
 
+up:
+	uv run fastapi dev main.py
+
 .PHONY: special
 migration:
 	@if [ -z "$(arg)" ]; then \
