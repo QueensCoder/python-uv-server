@@ -3,10 +3,11 @@ from http import HTTPStatus
 from ..dependencies import get_token_header
 from ..db.queries.api_queries import get_all_users, get_user_by_id, create_user
 
+
 router = APIRouter(
     prefix="/users",
     tags=["users"],
-    dependencies=[Depends(get_token_header)],
+    # dependencies=[Depends(get_token_header)],
     responses={404: {"description": "Not found"}},
 )
 
@@ -14,6 +15,7 @@ router = APIRouter(
 @router.get("/", status_code=HTTPStatus.OK)
 async def get_all_users():
     all_users = get_all_users()
+    print(all_users, "....")
     return all_users
 
 

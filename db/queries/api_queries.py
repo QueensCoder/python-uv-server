@@ -27,4 +27,5 @@ def get_all_users():
     Fetch all users.
     """
     users = session.query(User).all()
+    print(users, "....")
     return users

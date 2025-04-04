@@ -8,5 +8,13 @@ dependencies = [
     "alembic>=1.15.2",
     "fastapi[standard]>=0.115.12",
     "psycopg2-binary>=2.9.10",
+    "pylint>=3.3.6",
+    "pytest>=8.3.5",
     "sqlalchemy>=2.0.40",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest-hot-reloading>=0.1.0a19",
+]
+
