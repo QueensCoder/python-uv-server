@@ -14,3 +14,10 @@ revision:
 		exit 1; \
 	fi; \
      uv --directory db/migrations run alembic revision -m "$(arg)"
+
+test:
+	@if [ -z "$(suite)" ]; then \
+		uv run pytest; \
+	else \
+		uv run pytest $(suite); \
+	fi
