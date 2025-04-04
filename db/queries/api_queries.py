@@ -1,8 +1,6 @@
 from ..models import User, Campaign
 from ..connection import session
 
-print(User, "....")
-
 
 def get_user_by_id(user_id: str):
     """

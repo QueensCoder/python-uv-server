@@ -1,6 +1,3 @@
-hello:
-	echo "Hello, World!"
-
 up:
 	uv run fastapi dev main.py
 
